@@ -3,7 +3,7 @@
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <head>
     <meta charset="UTF-8" />
-    <title>Narrative-viz by das25</title>
+    <title>Narrative Visualization about Streaming Services</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link href="css/foundation.css" type="text/css" rel="stylesheet" media="screen" />
@@ -65,9 +65,9 @@
                   <ul> 
                       <li><a href="#" onclick="navigate('summary');" class="scroll">Content Volume</a></li>
                       <li>|</li>
-                      <li><a href="#" onclick="navigate('genresby');" class="scroll">Content Category</a></li>
+                      <li><a href="#" onclick="navigate('category');" class="scroll">Content Category</a></li>
                       <li>|</li>
-                      <li><a href="#" onclick="navigate('genresdetail');" class="scroll">Content Trend</a></li>
+                      <li><a href="#" onclick="navigate('trend');" class="scroll">Content Trend</a></li>
                   </ul>
               </nav>
           </div>
@@ -114,20 +114,20 @@
       var nextPage = "chart2.html";
       var previousPage = "chart1.html";
       var summaryPage = "chart1.html";
-      var genresbyPage = "chart2.html";
-      var genresdetailPage = "chart3.html";
+      var categoryPage = "chart2.html";
+      var trendPage = "chart3.html";
 
       function navigate(action) {
         if (action == "next") {
           dest = nextPage;
         } else if (action == "previous") {
           dest = previousPage;
-        } else if (action == "summary") {
-          dest = summaryPage;
-        } else if (action == "genresby") {
-          dest = genresbyPage;
-        } else if (action == "genresdetail") {
-          dest = genresdetailPage;
+        } else if (action == "volume") {
+          dest = volumePage;
+        } else if (action == "category") {
+          dest = categoryPage;
+        } else if (action == "trend") {
+          dest = trendPage;
         } else dest = "#";
         window.location = dest;
       }
