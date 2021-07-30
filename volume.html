@@ -110,12 +110,12 @@
     </section>
 
     <script>
-      var currentPage = "chart1.html";
-      var nextPage = "chart2.html";
-      var previousPage = "chart1.html";
-      var summaryPage = "chart1.html";
-      var genresbyPage = "chart2.html";
-      var genresdetailPage = "chart3.html";
+      var currentPage = "volume.html";
+      var nextPage = "category.html";
+      var previousPage = "volume.html";
+      var summaryPage = "volume.html";
+      var genresbyPage = "category.html";
+      var genresdetailPage = "trend.html";
 
       function navigate(action) {
         if (action == "next") {
@@ -147,7 +147,7 @@
         const data = await d3.csv("data/input_data.csv");
 
         function loadPage(id) {
-          dest = "chart2.html" + "?origin=" + id;
+          dest = "category.html" + "?origin=" + id;
           //console.log(dest);
           window.location = dest;
         }

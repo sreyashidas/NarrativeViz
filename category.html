@@ -132,12 +132,12 @@
       var yheight = height - 2 * margin.top - 2 * margin.bottom;
       const addfactor = 10;
 
-      var currentPage = "chart2.html";
-      var nextPage = "chart3.html";
-      var previousPage = "chart1.html";
-      var summaryPage = "chart1.html";
-      var genresbyPage = "chart2.html";
-      var jobsdetailPage = "chart3.html";
+      var currentPage = "category.html";
+      var nextPage = "trend.html";
+      var previousPage = "volume.html";
+      var summaryPage = "volume.html";
+      var genresbyPage = "category.html";
+      var jobsdetailPage = "trend.html";
 
       function navigate(action) {
         if (action == "next") {
@@ -351,7 +351,7 @@ var data1 = d3
         var originwsa = origin.replace('+','`').replace(' & ','~').replace(' ', '^');
         var originbywsa = originby.replace('+','`').replace(' & ','~').replace(' ', '^');
         var originbyvalwsa = id.replace('+','`').replace(' & ','~').replace(' ', '^');
-        dest = "chart3.html" + "?origin=" + originwsa + "&originby=" + originbywsa + "&originbyval=" + originbyvalwsa;
+        dest = "trend.html" + "?origin=" + originwsa + "&originby=" + originbywsa + "&originbyval=" + originbyvalwsa;
         //console.log(dest);
         window.location = dest;
       }
