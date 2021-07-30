@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>Movies Visualization</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+        
+        <!-- Foundations 5 Stylesheet-->
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+        <link href="css/foundation.css" type="text/css" rel="stylesheet" media="screen" />
+        
+        <!-- Normalize-->
+        <link href="css/normalize.css" type="text/css" rel="stylesheet" media="screen" />
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+        
+        <!-- Source Sans Pro Google Web Font-->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
+        
+        <!-- Font Awesome Web Font Icons-->
+        <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" media="screen" />
+        
+        <!-- General Stylesheet-->
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen" />
+
+        <link
+        rel="stylesheet"
+        type="text/css"
+        href="stylesheets/normalize.css"
+        media="screen"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="stylesheets/stylesheet.css"
+        media="screen"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="stylesheets/github-light.css"
+        media="screen"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="stylesheets/custom.css"
+        media="screen"
+      />
+        
+        <!-- jQuery Library 1.11.0 -->
+        <script type="text/javascript" src="js/jquery-1.11.0.min.js"> </script>
+        
+        <!-- Modernizr v2.7.1 -->
+        <script src="js/modernizr.js" type="text/javascript"> </script>
+        
+        <!-- Foundations 5 -->
+        <script src="js/foundation.min.js" type="text/javascript"> </script>
+
+        <!-- Caroufredsel jQuery Plugin -->
+        <script src="js/jquery.carouFredSel-6.2.1-packed.js" type="text/javascript"> </script>
+        
+        <!-- Isotope jQuery Plugin -->
+        <script src="js/jquery.isotope.js" type="text/javascript"> </script>
+        
+        <!-- General Initialization -->
+        <script src="js/general.js" type="text/javascript"> </script>
+
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        
+    </head>
+    
+    <body id="home">
+       <!-- Start of Header --> 
+       <header> 
+           <div class="row"> 
+               <div class="large-4 medium-12 column"> 
+                   <div class="logoholder">
+                       <a href="#home" class="scroll"><img src="images/uiuc.jpeg" alt="" title="" width="70" height="50"></a>
+                   </div>
+               </div>
+               <div class="large-8 medium-12 column">
+                   <nav> 
+                       <ul> 
+                           <li><a href="#about" class="scroll">About</a></li>
+                           <li>/</li>
+                           <li><a href="#services" class="scroll">Services</a></li>
+                           <li>/</li>
+                           <li><a href="#works" class="scroll">Works</a></li>
+                       </ul>
+                   </nav>
+               </div>
+               
+               <div class="large-12 column">
+                   <div class="sep"> </div>
+               </div>
+               
+           </div>
+       </header>
+       <!-- End of Header -->
+       
+       <!-- Start of About --> 
+       <section class="about" id="about">
+           <div class="row"> 
+               
+               <div class="large-8 large-centered column">
+                   <div class="title">
+                       <h1>Movies Visualization</h1>
+                       <span>...</span>
+                       <p>Below is the summary representation of Movie genres dataset in 2008 provided in Kaggle. Below is the summary of the dataset providing insight into the countries and the number of genres available for the respective countries. From the charts below we can clearly see that the Country China constitutes a significant percentage of the total number of genres received.</p>
+                   </div>
+               </div>
+
+       <section class="main-content">
+        <h3>
+          <span aria-hidden="true" class="octicon octicon-link"></span>Movies and Genres Summary
+        </h3>
+        <div class="tooltip1">
+          Below is the summary representation of Movie genres dataset in 2008 
+          provided in Kaggle. Below is the summary of the dataset
+          providing insight into the <mark class="pink">countries</mark> and
+          <mark class="pink">the number of genres</mark> available for the respective countries.
+          From the charts below we can clearly see that the Country China
+          constitutes a significant percentage of the total number of genres received.
+        </br></br>
+            <mark class="green">Left Bar Chart</mark> shows top 20 <mark class="pink">Countries</mark> by
+           <mark class="pink">Number of genres</mark> won<br />
+           <mark class="green">Right Pie Chart</mark> shows <mark class="pink">Countries</mark> by
+           <mark class="pink">Number of genres</mark> in <mark class="red">percentages</mark>
+        </div>
+  
+        <div>
+          <svg width="600" height="600"></svg>
+        </div>
+  
+        <footer class="site-footer">
+          <div class="tooltip2">
+          Please click <mark class="pink">Previous[<<]</mark> or <mark class="pink">Next[>>]</mark> buttons on the menu bar to navigate and view author set charts.
+          </br>
+          <span class="site-footer-credits">
+          Alternatively you may click to interactively view corresponsing data on the charts.
+          </span>
+          </div>
+        </footer>
+      </section>
+
+       
+       
+       
+       <!-- End of Footer -->
+       <script>
+		var currentPage = "index.html";
+		var nextPage = "chart2.html";
+		var previousPage = "chart1.html";
+		var summaryPage = "chart1.html";
+		var genresbyPage = "chart2.html";
+		var genresdetailPage = "chart3.html";
+  
+		function navigate(action) {
+		  if (action == "next") {
+		    dest = nextPage;
+		  } else if (action == "previous") {
+		    dest = previousPage;
+		  } else if (action == "summary") {
+		    dest = summaryPage;
+		  } else if (action == "genresby") {
+		    dest = genresbyPage;
+		  } else if (action == "genresdetail") {
+		    dest = genresdetailPage;
+		  } else dest = "#";
+		  window.location = dest;
+		}
+  
+		async function init() {
+		  var margin = {
+		    top: 50,
+		    right: 50,
+		    bottom: 50,
+		    left: 50,
+		  };
+		  var width = 1000;
+		  var height = 500;
+		  var xwidth = width / 2 - 2 * margin.right - 2 * margin.left;
+		  var yheight = height - 2 * margin.top - 2 * margin.bottom;
+		  const addfactor = 10;
+		  const data = await d3.csv("data/input_data.csv");
+
+		  function loadPage(id) {
+		    dest = "chart2.html" + "?origin=" + id;
+		    window.location = dest;
+		  }
+
+		  filteredData = data.filter(function(d){return d.IMDb >= 7;});
+		  netflixTotal = d3.sum(
+		    filteredData.filter(d => d.Netflix == 1),
+		    d => d.Netflix
+		  )
+		  primeVideoTotal = d3.sum(
+		    filteredData.filter(d => d.PrimeVideo == 1),
+		    d => d.PrimeVideo
+		  )
+		  huluTotal = d3.sum(
+		    filteredData.filter(d => d.Hulu == 1),
+		    d => d.Hulu
+		  )
+		  disneyTotal = d3.sum(
+		    filteredData.filter(d => d.Disney == 1),
+		    d => d.Disney
+		  )
+  
+		  var streamingServicesMap = {
+		    "Netflix":netflixTotal,
+		    "Prime Video":primeVideoTotal,
+		    "Hulu":huluTotal,
+		    "DisneyPlus":disneyTotal
+		  };
+  
+       		  var graphdata = d3.entries(streamingServicesMap);
+
+		  graphdata.sort(function (a, b) {
+		    return d3.descending(+a.value, +b.value);
+		  });
+
+		  var xs = d3
+		    .scaleBand()
+		    .domain(
+		      graphdata.map(function (d) {
+			return d.key;
+		      })
+		    )
+		    .range([0, xwidth]);
+  
+		  var ys = d3
+		    .scaleLinear()
+		    .domain([
+		      d3.min(graphdata, function (d) {
+			return d.value;
+		      }),
+		      d3.max(graphdata, function (d) {
+			return d.value;
+		      }),
+		    ])
+		    .range([yheight, 0]);
+  
+          	  var colorrn = d3.scaleOrdinal(d3.schemeCategory10); //Color should be same as pie chart
+  
+
+		  var tooltip = d3
+		    .select("body")
+		    .append("div")
+		    .attr("class", "tooltip")
+		    .style("position", "absolute")
+		    .style("z-index", 10)
+		    .style("visibility", "hidden")
+		    .text("Simple text");
+
+
+		  d3.select("svg")
+		    .attr("width", width)
+		    .attr("height", height)
+		    .append("g")
+		    .attr(
+		      "transform",
+		      "translate(" + margin.right + "," + margin.bottom + ")"
+		    )
+		    .selectAll("rect")
+		    .data(graphdata)
+		    .enter()
+		    .append("rect")
+		    .attr("data-html", "true")
+		    .attr("x", function (d, i) {
+		      return xs(d.key);
+		    })
+		    .attr("y", function (d) {
+		      return ys(d.value);
+		    })
+		    .attr("width", xs.bandwidth())
+		    .attr("height", function (d) {
+		      return addfactor + (yheight - ys(d.value));
+		    })
+		    .attr("fill", function (d,i) {
+		      console.log('d', d)
+		      if(getKey(i) == "Netflix") { console.log("Netflix"); return "#E50914";}
+		      else if(getKey(i) == "Prime Video") { console.log("Prime Video", getKey(i)); return "#00A8E1";}
+		      else if(getKey(i) == "Hulu") { console.log("Hulu"); return "#66aa33";}
+		      else if(getKey(i) == "DisneyPlus") { console.log("DisneyPlus"); return "#006e99";}
+		      else return colorOrd(i);
+		    })
+		    .text((d) => d.value)
+		    .on("mouseover", (d) => {
+		      var textval = "Total genres: " + totalGenres;
+		      textval = textval + "</br>" + (d.key + " : " + d.value.toFixed(0) + ' Genres');
+		      tooltip.html(textval);
+		      return tooltip.style("visibility", "visible");
+		    })
+		    .on("mousemove", function () {
+		      return tooltip
+			.style("top", d3.event.pageY - 10 + "px")
+			.style("left", d3.event.pageX + 10 + "px");
+		    })
+		    .on("mouseout", () => tooltip.style("visibility", "hidden"))
+		    .on("click", (d) => {
+		      loadPage(d.key);
+		    });
+  
+
+			  d3.select("svg")
+			    .attr("width", width)
+			    .attr("height", height)
+			    .append("g")
+			    .attr(
+			      "transform",
+			      "translate(" +
+				margin.right +
+				"," +
+				(addfactor + margin.bottom) +
+				")"
+			    )
+			    .call(
+			      d3
+				.axisLeft(ys)
+				.ticks(7)
+				//.tickFormat(d3.format("~s"))
+			    );
+
+			  // text label for the y axis
+			  d3.select("svg")
+			    .attr("width", width)
+			    .attr("height", height)
+			    .append("g")
+			    .attr(
+			      "transform",
+			      "translate(" + margin.right + "," + margin.bottom + ")"
+			    )
+			    .append("text")
+			    .attr("transform", "rotate(-90)")
+			    .attr("y", 0 - margin.left)
+			    .attr("x", 0 - yheight / 2)
+			    .attr("dy", ".75em")
+			    .style("text-anchor", "middle")
+			    .style("font", "Arial")
+			    .style("font-size", "11px")
+			    .style("font-weight", "bold")
+			    .text("No of Movies");
+  
+          // x- axis
+          d3.select("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr(
+              "transform",
+              "translate(" +
+                margin.right +
+                "," +
+                (addfactor + yheight + margin.bottom) +
+                ")"
+            ) //(50,450)
+            .call(d3.axisBottom(xs))
+            .selectAll("text")
+            .attr("y", 0)
+            .attr("x", 10)
+            .attr("dy", ".35em")
+            .attr("transform", "rotate(90)")
+            .style("text-anchor", "start")
+            .style("font", "Arial")
+            .style("font-size", "10px")
+            .style("font-weight", "bold");
+  
+          ///////////////////////////////////////////////////// Bar Chart End ///////////////////////////////////////
+  
+          ///////////////////////////////////////////////////// Pie Chart ///////////////////////////////////////////
+          //var otherdata = data1.slice(10); // Rest all elements
+          //var othercountrycount = otherdata.reduce((acc, d) => acc + d.value, 0);
+          //console.log('othercountrycount', othercountrycount );
+          //var graphdata1 = data1.slice(0,11);
+          //graphdata1[10] = {"key":"All Other Genres", "value":othercountrycount};
+          //console.log('graphdata1', graphdata1 );
+  
+          var radius = 150;
+          var totalGenres = d3.sum(graphdata, (d) => d.value); //Find total number of genres
+  
+          var piedata = graphdata.map(function (d) {
+            var val = (d.value / totalGenres) * 100;
+            //console.log(val);
+            return val;
+          });
+          var color = d3.schemeCategory10;
+          var pie = d3.pie();
+          var arc = d3.arc().innerRadius(100).outerRadius(radius);
+          var arcData = pie(piedata);
+          var colorOrd = d3.scaleOrdinal(d3.schemeCategory10);
+  
+          function getKey(index) {
+            return graphdata[index].key;
+          }
+  
+          var g = d3
+            .select("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + 550 + "," + 190 + ")")
+            .selectAll("path")
+            .data(arcData)
+            .enter();
+  
+          g.append("path")
+            .attr("d", arc)
+            .attr("fill", function (d, i) {
+              console.log('d', d)
+              if(getKey(i) == "Netflix") { console.log("Netflix"); return "#E50914";}
+              else if(getKey(i) == "Prime Video") { console.log("Prime Video", getKey(i)); return "#00A8E1";}
+              else if(getKey(i) == "Hulu") { console.log("Hulu"); return "#66aa33";}
+              else if(getKey(i) == "DisneyPlus") { console.log("DisneyPlus"); return "#006e99";}
+              else return colorOrd(i); 
+            })
+            .text((d) => d.value)
+            .on("mouseover", function (d, i) {
+              d3.select(this)
+                .style("stroke", "black")
+                .style("stroke-width", "2px");
+              tooltip.text(getKey(i) + " : " + d3.format(".1f")(d.value) + " %");
+              return tooltip.style("visibility", "visible");
+            })
+            .on("mousemove", function () {
+              return tooltip
+                .style("top", d3.event.pageY - 10 + "px")
+                .style("left", d3.event.pageX + 10 + "px");
+            })
+            .on("mouseout", function () {
+              d3.select(this)
+                .style("stroke", "white")
+                .style("stroke-width", "1px");
+              tooltip.style("visibility", "hidden");
+            })
+            .on("click", (d, i) => {
+              loadPage(getKey(i));
+            });
+  
+          // Arc defined just for label below
+          var labelArc = d3
+            .arc()
+            .innerRadius(radius + 14)
+            .outerRadius(radius + 40);
+  
+          //Printing labels
+          g.append("text")
+            .attr("transform", function (d) {
+              return "translate(" + labelArc.centroid(d) + ")";
+            })
+            .text(function (d, i) {
+              return Math.round(d.value, 0) < 2
+                ? ""
+                : d3.format(".1f")(d.value) + " %";
+            })
+            .style("fill", "#1f77b4")
+            .style("font", "Arial")
+            .style("font-size", "10px")
+            .style("font-weight", "bold");
+  
+          //X-scale
+          var xs1 = d3
+            .scaleBand()
+            .domain(
+              graphdata.map(function (d) {
+                return;
+              })
+            )
+            .range([0, xwidth]);
+        }
+      </script>
+    </body>
+</html>
