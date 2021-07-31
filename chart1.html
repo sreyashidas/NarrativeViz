@@ -3,7 +3,7 @@
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <head>
     <meta charset="UTF-8" />
-    <title>Narrative Visualization about Streaming Services</title>
+    <title>Video Streaming Insights</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link href="css/foundation.css" type="text/css" rel="stylesheet" media="screen" />
@@ -57,9 +57,14 @@
       <div class="row"> 
           <div class="large-4 medium-12 column"> 
               <div class="logoholder">
-                  <a href="#home" class="scroll"><img src="images/uiuc.jpeg" alt="" title="" width="70" height="50"></a>
+                  <a href="#home" class="scroll"><img src="images/uiuc.jpeg" alt="" title="" width="80" height="50"></a>
               </div>
+            </br>
+              <div class="logoholder">
+                Video Streaming Insights
+            </div>
           </div>
+
           <div class="large-8 medium-12 column">
               <nav> 
                   <ul> 
@@ -79,33 +84,47 @@
       </div>
   </header>
     <section class="main-content">
+
+       <!-- Start of Parallax --> 
+       <div class="large-4 hide-for-medium-only hide-for-small-only column start" id = "imageclass"> 
+        <div class="imageholder">
+            <img src="images/stream.jpeg" alt="Streaming" title="Stream Wars">
+        </div>
+    </div>
+       <!-- End of Parallax --> 
+      <br>
+
       <h3>
-        <span aria-hidden="true" class="octicon octicon-link" id="header2"></span>Which streaming service has the highest number of movies?
+        <span aria-hidden="true" class="octicon octicon-link" id="header2"></span>Which streaming service has the largest number of highly-rated movies?
       </h3>
+
+      <div class="tooltip1" id = "textbody">
+        The charts below represent content volume (number of movies released) per streaming service and this data set is provided by Kaggle.
+ 		Video Streaming Services such as <mark class="green" id = "redbody">Netflix</mark>, <mark class="green" id = "bluebody">Prime Video</mark>, <mark class="green" id="greenbody" >Hulu</mark> and
+ 		 <mark class="green" id = "blueybody">DisneyPlus</mark> are fundamentally changing the viewing habits of consumers of all ages. 
+ 		</br></br>The charts clearly depict that Amazon's Video on Demand Service ranks first among companies with the biggest impact on digital video.
+ 		To learn more about the content libraries of the four streaming giants is the soul objective of this project. This will help potential subscribers in choosing the best streaming service based on content quality (IMDb score), Genre, Age and Language and yearly releases. 
+		 <h6> Content Volume Chart Description </h6> 
+	  	<mark class="green" id = "bluetext">Left Bar Chart</mark> shows highly-rated <mark class="green" id = "bluetext" >(IMDb score >=7)</mark> movies for each streaming provider<br />
+		 <mark class="green" id = "bluetext" >Right Pie Chart</mark> shows four streaming services by
+		 number of highly-rated movies in <mark class="green" id = "bluetext">percentages</mark>
+      </div>
+      <br>
+
+      <div>
+        <svg width="600" height="600"> </svg>
+      </div>
+      <div class="tooltip2">
+        
+      </div>
       <footer class="site-footer">
         <div class="tooltip2">
           <span class="site-footer-credits">
-            Amazon Prime Video has the largest content slate. You may click on the bar to interactively view corresponding data about that streaming service.
+            <b>Title: Content Volume Per Provider </b> <br>
+             You may click on the bar to interactively view corresponding data about that streaming service.
           </span>
           </div>
       </footer>
-
-      <div class="tooltip1">
-        The charts below represent content volume (number of movies released) per streaming service and this data set is provided by Kaggle.
- 		Video Streaming Services such as <mark class="green">Netflix</mark>, <mark class="green">Prime Video</mark>, <mark class="green">Hulu</mark> and
- 		 <mark class="green">DisneyPlus</mark> are fundamentally changing the viewing habits of consumers of all ages. 
- 		</br>The charts clearly depict that Amazon's Video on Demand Service ranks first among companies with the biggest impact on digital video.
- 		To learn more about the content libraries of the four streaming giants is the soul objective of this project. This will help potential subscribers in choosing the best streaming service based on content quality (IMDb score), Genre, Rating, Country and Language and yearly releases. 
-		</br></br>Content Volume is presented below. <br />
-	  	<mark class="green">Left Bar Chart</mark> shows content volume <mark class="green">for each streaming provider</mark> by
-		 <mark class="green">Number of movies</mark> won<br />
-		 <mark class="green">Right Pie Chart</mark> shows <mark class="green">four streaming services</mark> by
-		 <mark class="green">Number of movies</mark> in <mark class="green">percentages</mark>
-      </div>
-
-      <div>
-        <svg width="600" height="600"></svg>
-      </div>
     </section>
     <script>
       var currentPage = "chart1.html";
@@ -188,6 +207,7 @@ var streamingServicesMap = {
 };
 console.log('streamingServicesMap', streamingServicesMap);
 
+
      var graphdata = d3.entries(streamingServicesMap);
         graphdata.sort(function (a, b) {
           return d3.descending(+a.value, +b.value);
@@ -217,6 +237,7 @@ console.log('streamingServicesMap', streamingServicesMap);
           ])
           .range([yheight, 0]);
 
+
         // Tool Tip mouse hover
         var tooltip = d3
           .select("body")
@@ -226,7 +247,7 @@ console.log('streamingServicesMap', streamingServicesMap);
           .style("z-index", 10)
           .style("visibility", "hidden")
           .text("Simple text");
-
+        
         // Chart
         d3.select("svg")
           .attr("width", width)
@@ -253,10 +274,10 @@ console.log('streamingServicesMap', streamingServicesMap);
           })
           .attr("fill", function (d,i) {
             console.log('d', d)
-			if(getKey(i) == "Netflix") { console.log("Netflix"); return "#E50914";}
-			else if(getKey(i) == "Prime Video") { console.log("Prime Video", getKey(i)); return "#00A8E1";}
-			else if(getKey(i) == "Hulu") { console.log("Hulu"); return "#66aa33";}
-			else if(getKey(i) == "DisneyPlus") { console.log("DisneyPlus"); return "#006e99";}
+			if(getKey(i) == "Netflix") { console.log("Netflix"); return "#DC0012";}
+			else if(getKey(i) == "Prime Video") { console.log("Prime Video", getKey(i)); return "#159CDC";}
+			else if(getKey(i) == "Hulu") { console.log("Hulu"); return "#28F678";}
+			else if(getKey(i) == "DisneyPlus") { console.log("DisneyPlus"); return "#09476C";}
 			else return colorOrd(i);
           })
 		  .text((d) => d.value)
@@ -315,6 +336,7 @@ console.log('streamingServicesMap', streamingServicesMap);
           .style("font-size", "11px")
           .style("font-weight", "bold")
           .text("No of Movies");
+
 
         // x- axis
         d3.select("svg")
@@ -382,17 +404,14 @@ console.log('streamingServicesMap', streamingServicesMap);
           .attr("d", arc)
           .attr("fill", function (d, i) {
             console.log('d', d)
-			if(getKey(i) == "Netflix") { console.log("Netflix"); return "#E50914";}
-			else if(getKey(i) == "Prime Video") { console.log("Prime Video", getKey(i)); return "#00A8E1";}
-			else if(getKey(i) == "Hulu") { console.log("Hulu"); return "#66aa33";}
-			else if(getKey(i) == "DisneyPlus") { console.log("DisneyPlus"); return "#006e99";}
+			if(getKey(i) == "Netflix") { console.log("Netflix"); return "#DC0012";}
+			else if(getKey(i) == "Prime Video") { console.log("Prime Video", getKey(i)); return "#159CDC";}
+			else if(getKey(i) == "Hulu") { console.log("Hulu"); return "#28F678";}
+			else if(getKey(i) == "DisneyPlus") { console.log("DisneyPlus"); return "#09476C";}
 			else return colorOrd(i); 
           })
           .text((d) => d.value)
           .on("mouseover", function (d, i) {
-            d3.select(this)
-              .style("stroke", "grey")
-              .style("stroke-width", "2px");
             tooltip.text(getKey(i) + " : " + d3.format(".1f")(d.value) + " %");
             return tooltip.style("visibility", "visible");
           })
@@ -401,15 +420,11 @@ console.log('streamingServicesMap', streamingServicesMap);
               .style("top", d3.event.pageY - 10 + "px")
               .style("left", d3.event.pageX + 10 + "px");
           })
-          .on("mouseout", function () {
-            d3.select(this)
-              .style("stroke", "white")
-              .style("stroke-width", "1px");
-            tooltip.style("visibility", "hidden");
-          })
-          .on("click", (d, i) => {
+          .on("mouseout", () => tooltip.style("visibility", "hidden"))
+          .on("click", (d,i) => {
             loadPage(getKey(i));
           });
+
 
         // Arc defined just for label below
         var labelArc = d3
