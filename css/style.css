@@ -775,10 +775,14 @@ section.contact ul li i {
   font-size: 1.308em;
 }
 
+.header2{
+  color: darkblue;
+}
+
 footer {
   width: 100%;
   display: block;
-  background: #eeeeee;
+  background: #C9F6FF;
   padding: 10px 0;
 }
 footer .copyright {
