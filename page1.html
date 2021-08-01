@@ -164,7 +164,7 @@
         var xwidth = width / 2 - 2 * margin.right - 2 * margin.left;
         var yheight = height - 2 * margin.top - 2 * margin.bottom;
         const addfactor = 10;
-        const data = await d3.csv("data/input_data.csv");
+        const data = await d3.csv("data/movies.csv");
 
         function loadPage(id) {
           dest = "page2.html" + "?origin=" + id;
