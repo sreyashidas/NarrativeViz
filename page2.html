@@ -99,9 +99,9 @@
       </h3>
 
       <div class="tooltip1" id = "textbody"> 
-        Track down your all time favorite movie genre or find something new. This chart shows <span  id = "bluetext">Top 10</span> content categories related to title metadata such as Genre, Age, Language, Runtime and IMDb score. By <span  id = "bluetext">default</span> shows 
-        <span  id = "bluetext">all movies</span> by content categories belonging to different <span  id = "bluetext">Genres</span>.
-        Any selection of a <span  id = "bluetext">Streaming Service Provider</span> from the previous page will set the chart accordingly.</br>
+        Track down your all time favorite movie genre or find something new. This chart shows <span  id = "bluetext">Top 10</span> content categories such as Genre, Age, Language, Runtime. By <span  id = "bluetext">default</span> shows 
+        <span  id = "bluetext">All Streaming Services</span> by content categories belonging to different <span  id = "bluetext">Genres</span>.
+        Any selection of a <span  id = "bluetext">Streaming Service</span> from the previous page will set the chart accordingly.</br>
 
         </div>
       </p>
@@ -582,7 +582,8 @@
         //Before drawing chart set everything to blank
          
         document.getElementById("chartlabel").innerHTML = "<h6> Content Category Chart Description </h6>" + 
-         "<span id = 'textbody'>Showing distribution of titles for</span> <span  id = 'bluetext'>" + origin + "</span> <span id = 'textbody'>by Top 10 Movie </span><span  id = 'bluetext'>" + originby;
+         "<span id = 'textbody'>Showing Top 10 Movie </span><span  id = 'bluetext'>"+ originby + "</span><span id = 'textbody'> of highly-rated </span><span id = 'bluetext'>(IMDb score >=7)</span> <span id = 'textbody'>movies in </span><span  id = 'bluetext'>" + origin + "</span>" ;
+         //+ originby + "<span id = 'textbody'> of highly-rated </span> <span id = 'bluetext'(IMDb score >=7)</span><span id = 'textbody'> movies in </span> <span  id = 'bluetext'>" + origin + "</span> ;
 
         d3.select("svg").selectAll("*").remove();
 

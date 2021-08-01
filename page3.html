@@ -96,8 +96,8 @@
       </h3>
       <div class="tooltip1" id = "textbody">
 	    Based on user preferences set for <span  id = "bluetext">Streaming Service</span> and  <span  id = "bluetext">Content Category</span>, content availability over the years will be displayed in below chart accordingly. User can view favorite movie categories and compare results with other streaming services. 
-        </br></br>This grouped barchart shows content volume for each video streaming service in the last 10 years . By <span  id = "bluetext">default</span> shows 
-        <span  id = "bluetext">All Movies</span> released by streaming services belonging to different <span  id = "bluetext">Genres</span>.
+        </br></br> By <span  id = "bluetext">default</span> shows distribution of movies streamed by
+        <span  id = "bluetext">All Streaming Services</span> belonging to different <span  id = "bluetext">Genres</span>.
 </br>
         
 	      
@@ -242,7 +242,7 @@
           urlParams.get("origin") == undefined ||
           urlParams.get("origin") == null ||
           urlParams.get("origin") == ""
-            ? "All Movies"
+            ? "All Streaming Services"
             : urlParams.get("origin").replace('^', ' ').replace('~',' & ').replace('`', '+');
         originby =
           urlParams.get("originby") == undefined ||
@@ -264,7 +264,7 @@
         var originbyval2 = (originbyval !== "")? originbyval : "All";
          
         document.getElementById("chartlabel").innerHTML = "<h6> Content Trend Chart Description </h6>" + 
-         "<span id = 'textbody'>Showing distribution of titles for</span> <span  id = 'bluetext'></span>" + origin + " <span id = 'textbody'>by Content Category (</span><span  id = 'bluetext'>" + originby + " - " + originbyval2 +"</span><span id = 'textbody'>) starting with current year. </span></br></br> ";
+         "<span id = 'textbody'>Showing distribution of titles with Content Category (</span><span  id = 'bluetext'>" + originby + " - " + originbyval2 +"</span><span id = 'textbody'>) starting year 2020. </span></br></br> ";
         initializebarchartdata(); //initializes list with data for the next loadList call
         loadList();
       }
