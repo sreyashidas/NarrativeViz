@@ -8,7 +8,7 @@
 
     <script>
       function redirectto() {
-        window.location = "chart1.html";
+        window.location = "page1.html";
       }
     </script>
   </body>

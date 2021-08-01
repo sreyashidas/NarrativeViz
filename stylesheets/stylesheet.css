@@ -158,8 +158,8 @@ a:hover {
 
 #imageclass{
   margin-top: 40px;
-  margin-left: 150px;
-  width: 400px;
+  margin-left: 250px;
+  width: 200px;
 }
 
 #redbody{
@@ -168,6 +168,41 @@ a:hover {
   font-family: Arial, Helvetica, sans-serif;
   padding: 1px;
   word-spacing: 3px;
+}
+
+#first:hover{
+  background-color: #d3b4ca;
+  color: black;
+}
+
+#next:hover{
+  background-color: #d3b4ca;
+  color: black;
+}
+
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #04AA6D;
+  color: white;
+}
+#nav{
+  float: right;
 }
 
 #bluebody{
@@ -185,7 +220,15 @@ a:hover {
   padding: 1px;
   word-spacing: 3px;
 }
-
+.tooltip{
+  color: #d3b4ca;
+}
+.button{
+  padding: 5px;
+  color: white;
+  font-size: 14px;
+  background-color: #965884;
+}
 #blueybody{
   color: #006e99;
   font-size: 15.5px;
@@ -206,13 +249,18 @@ a:hover {
 .main-content h5,
 .main-content h6 {
     /* margin-top: 50px; */
-    margin-top: 300px;
+    margin-top: 200px;
     margin-bottom: 1rem;
     font-weight: normal;
-    color: darkblue;
+    color: #965884;
+}
+
+#selectchoice{
+  width: 200px;
 }
 .main-content h6 {
   margin-top: 2rem;
+  text-decoration: wavy;
 }
 .main-content p {
   margin-bottom: 1em;
@@ -362,7 +410,7 @@ a:hover {
   margin-top: 2rem;
   margin-bottom: 30px;
   padding-left: 10px;
-  border-top: solid 1px #eff0f1;
+  border-top: solid 1px #d3b4ca;
 }
 
 .site-footer-owner {
@@ -371,7 +419,7 @@ a:hover {
 }
 
 .site-footer-credits {
-  color: #819198;
+  color:black;
 }
 
 @media screen and (min-width: 64em) {
