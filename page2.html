@@ -99,7 +99,7 @@
       </h3>
 
       <div class="tooltip1" id = "textbody"> 
-        Track down your all time favorite movie genre or find something new. This chart shows <span  id = "bluetext">Top 10</span> content categories such as Genre, Age, Language, Runtime. By <span  id = "bluetext">default</span> shows 
+        Track down your all time favorite movie genre or find something new. This chart shows <span  id = "bluetext">Top 10</span> categories of movies related to Movie Genre, Age, Language, Runtime and IMDb score. By <span  id = "bluetext">default</span> shows 
         <span  id = "bluetext">All Streaming Services</span> by content categories belonging to different <span  id = "bluetext">Genres</span>.
         Any selection of a <span  id = "bluetext">Streaming Service</span> from the previous page will set the chart accordingly.</br>
 
@@ -190,7 +190,7 @@
       }); 
 }      
 
-    function loadJobs() {
+    function loadContent() {
 	filteredInputData = inputdata.filter(function(d){return d.IMDb >= 7;});
 
 	netflixTotal = d3.sum(
@@ -230,7 +230,7 @@
 
     var rows = d3.entries(streamingServicesMap);
 
-	var item = d3
+	var items = d3
           .nest()
           .key(function (d) {
             return d.ID == "" ? "None" : d.ID;
@@ -242,7 +242,7 @@
           })
           .entries(filteredInputData);        
 
-        totalcontent = item.sum("value"); // getting total content
+        totalcontent = items.sum("value"); // getting total content
 
         rows.sort(function (a, b) {
           return d3.descending(+a.value, +b.value);
@@ -257,7 +257,7 @@
         var contentlabel = document.createElement("label");
         contentlabel.innerHTML =
           "Streaming Service : " + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-        contentlabel.htmlFor = "jobs";
+        contentlabel.htmlFor = "content";
 
         var selectcontent = document.createElement("select");
         selectcontent.name = "service_name";
@@ -361,8 +361,8 @@
 
         inputdata = await d3.csv("data/movies.csv");
 
-        //Load Job select
-        loadJobs();
+        //Load select
+        loadContent();
         initializebarchartdata();
         //Show chart
         showChart();

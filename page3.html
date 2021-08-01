@@ -130,7 +130,7 @@
       var filteredInputData = []; // holds filtered data per parameters
       var barchartdata = []; //this will hold chart data at any point of time
       var totalcontent;
-      var topcontent = []; // Top job Keys
+      var topcontent = []; // Top Keys
       var origin;
       var originby = 'Genre';  //default
       var originbyval;
@@ -352,7 +352,7 @@
               if (g.Disney == 1) return 1;
               else return 0;
             }),
-            totaljobcount: d3.sum(d, function (g) {
+            totalmoviecount: d3.sum(d, function (g) {
                 return 1;
             })
           }
@@ -378,7 +378,7 @@
             PrimeVideo: obj.value.PrimeVideo,
             Hulu: obj.value.Hulu ,
             Disney: obj.value.Disney,
-            totaljobcount: obj.value.totaljobcount
+            totalmoviecount: obj.value.totalmoviecount
           }
         });
          console.log('Sorted Data', interimData2);
